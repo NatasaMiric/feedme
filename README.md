@@ -85,10 +85,29 @@ The goal of this application is to give users the possibility to create, update 
 
 ### Design
 #### Color scheme
+
+The website color scheme is light and pastel to achieve soothing appearance and make it fun. The goal is to boost in visitors positive and fun emotions.   
+
+Navbar color #e66e6c / Text #eff3ef
+Page Background #ebedec / Text #323e48
+Buttons #259f7a / 
+Forms # f5f5f5
+
 #### Typography
+
+For the font I choose a [Google Font](https://fonts.google.com/) that is easy to read and has a variety of styles: 
+
+* [Montserrat](https://fonts.google.com/specimen/Montserrat?query=monts)
+
 #### Imagery
 
 ### Project planning
+
+The project was developed using an Agile approach by defining the epics and user stories that were implemented in 5 sprints, each lasting of one week.
+
+I used the GitHub project for planning and creating epics and user stories that were broken into tasks and each user story had assigned labels according to the app that it belong to (API or React Front-End) and connected to the corresponding epic. MoSCoW prioritization was assigned to each user story to ensure that all core features are completed first.
+
+I decided to have one Kanban board where will I implement issues for both API and frontend application which I considered more practical and can be accessed [here](https://github.com/users/NatasaMiric/projects/4/views/1) to see more details for each ticket.
 
 ## Features
 ### Existing features
