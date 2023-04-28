@@ -14,3 +14,10 @@
     cursor: pointer;
 }
 
+.NavLink {
+    padding: 5px;
+  }
+  
+.Active i {
+    color: #eff3ef;
+}
