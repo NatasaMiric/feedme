@@ -1,0 +1,13 @@
+.NavBar {
+    background-color: #e66e6c;    
+}
+
+.Brand {  
+    color: #eff3ef;        
+}
+
+.Brand:hover {
+    color: #323e48; 
+    transition: color ease-in-out 0.3s;
+    cursor: pointer;
+}
