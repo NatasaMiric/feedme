@@ -3,11 +3,14 @@
 }
 
 .Brand {  
-    color: #eff3ef;        
+    color: #323e48; 
+    font-size: 110%; 
+    margin-left: 0.5rem;       
 }
 
 .Brand:hover {
-    color: #323e48; 
+    color: #eff3ef;  
     transition: color ease-in-out 0.3s;
     cursor: pointer;
 }
+

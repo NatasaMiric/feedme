@@ -1,6 +1,5 @@
 .App {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;    
     background-color: #ebedec;
     min-height: 100vh;
 }
@@ -8,14 +7,14 @@
 * {
     box-sizing: border-box;
 }
-  
+
 a:hover i {
-    color: #323e48;
+    color: #eff3ef;
     transition: color ease-in-out 0.3s;
 }
 
 i {
-    color: #eff3ef;
+    color: #323e48;
     transition: color ease-in-out 0.3s;
     font-size: 1.5rem;
 } 
@@ -23,5 +22,5 @@ i {
 i:hover {
     cursor: pointer;
     transition: color ease-in-out 0.3s;
-    color: #323e48;
+    color: #eff3ef;
 }
