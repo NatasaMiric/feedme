@@ -8,12 +8,31 @@
     padding-top: 81px;
 }
 
+.Content {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 2px;
+    border: 1px solid #dadadf;
+  }
+
+.FormsImage {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+  
+.Image {
+    max-height: 40vh;
+    max-width: 100%;
+    object-fit: contain;
+}
+
 * {
     box-sizing: border-box;
 }
 
 a {
-    color: #323e48;
+    color: #3a5265;
     transition: color ease-in-out 0.3s;
 }
   
@@ -28,7 +47,7 @@ a:hover i {
 }
 
 i {
-    color: #323e48;
+    color: #3a5265;
     transition: color ease-in-out 0.3s;
     font-size: 1.5rem;
 } 

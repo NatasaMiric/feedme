@@ -3,7 +3,7 @@
 }
 
 .Brand {  
-    color: #323e48; 
+    color: #3a5265; 
     font-size: 110%; 
     margin-left: 0.5rem;       
 }
@@ -17,7 +17,7 @@
 .NavLink {
     padding: 5px;
   }
-  
+
 .Active i {
     color: #eff3ef;
 }

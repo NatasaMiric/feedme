@@ -1,0 +1,46 @@
+.Button {
+  font-size: 0.9rem;
+  align-self: center;
+  border-radius: 100px;
+  border-color: transparent;
+  padding: 4px;
+  margin-left: 2px;
+  margin-right: 2px;
+  min-width: 75px;
+}
+
+.Button:hover {
+  opacity: 0.8;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.Button:hover:active {
+  background-color: #3a5265 !important;
+}
+
+.Button:active {
+  background-color: #3a5265 !important;
+}
+
+.Button:focus {
+  background-color: #3a5265;
+}
+
+.Wide {
+  padding: 5px 50px;
+  width: 100%;
+}
+
+.Submit {
+  background-color: #3a5265;
+  color: #eff3ef;  
+  letter-spacing: 1px;
+}
+
+.Submit:hover { 
+  background-color: #e66e6c;
+  border-color: #e66e6c;
+  cursor: pointer;
+
+}
