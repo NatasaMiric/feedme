@@ -53,7 +53,7 @@ const SignUpForm = () => {
         <Image
           className={`${appStyles.FormsImage}`}
           src={
-            "https://res.cloudinary.com/dyji6gqtn/image/upload/v1682717199/signupform_wyas3d.jpg"
+            "https://res.cloudinary.com/dyji6gqtn/image/upload/v1682862164/formimage_qibfmd.jpg"
           }
         />
       </Col>

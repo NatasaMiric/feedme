@@ -33,7 +33,7 @@
 
 a {
     color: #3a5265;
-    transition: color ease-in-out 0.3s;
+    transition: color ease-in-out 0.3s;        
 }
   
 a:hover {
@@ -50,6 +50,8 @@ i {
     color: #3a5265;
     transition: color ease-in-out 0.3s;
     font-size: 1.5rem;
+    padding: 7px;
+    vertical-align: middle;
 } 
 
 i:hover {
@@ -57,3 +59,9 @@ i:hover {
     transition: color ease-in-out 0.3s;
     color: #eff3ef;
 }
+
+figure {
+    text-align: center;
+    display: inline-block;
+}
+  
