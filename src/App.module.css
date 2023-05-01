@@ -1,5 +1,5 @@
 .App {
-    font-family: 'Montserrat', sans-serif;    
+    font-family: 'Montserrat', sans-serif;
     background-color: #ebedec;
     min-height: 100vh;
 }
@@ -13,14 +13,14 @@
     padding: 10px;
     border-radius: 2px;
     border: 1px solid #dadadf;
-  }
+}
 
 .FormsImage {
     object-fit: cover;
     height: 100%;
     width: 100%;
 }
-  
+
 .Image {
     max-height: 40vh;
     max-width: 100%;
@@ -33,9 +33,9 @@
 
 a {
     color: #3a5265;
-    transition: color ease-in-out 0.3s;        
+    transition: color ease-in-out 0.3s;
 }
-  
+
 a:hover {
     text-decoration: none;
     color: #eff3ef;
@@ -52,7 +52,7 @@ i {
     font-size: 1.5rem;
     padding: 7px;
     vertical-align: middle;
-} 
+}
 
 i:hover {
     cursor: pointer;
@@ -64,4 +64,21 @@ figure {
     text-align: center;
     display: inline-block;
 }
-  
+
+input[type="file"] {
+    display: none;
+}
+
+/* scrollbar */
+*::-webkit-scrollbar {
+    width: 5px;
+  }
+  *::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
