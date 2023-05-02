@@ -46,3 +46,25 @@ h5 {
 .BookmarkOutline:hover {
   color:  #329e7f;
 }
+
+.Subtitle {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #323e48;
+}
+
+.Header {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #323e48;
+}

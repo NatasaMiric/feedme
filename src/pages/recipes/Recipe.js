@@ -17,6 +17,9 @@ const Recipe = (props) => {
         profile_id,
         profile_image,
         title,
+        ingredients,
+        instructions,
+        category,
         recipe_image,
         difficulty,
         cooking_time,
@@ -63,7 +66,7 @@ const Recipe = (props) => {
             console.log(err);
         }
     };
-    
+
     return (
         <Card className={styles.Recipe}>
             <Card.Body>
@@ -82,10 +85,11 @@ const Recipe = (props) => {
                 <Card.Img src={recipe_image} alt={title} />
             </Link>
             <Card.Body >
-                {title && <Card.Title className="text-center">{title}</Card.Title>}
+                {title && <Card.Title className={styles.Header}>{title}</Card.Title>}
                 <div className={styles.CardText}>
                     {cooking_time && <Card.Text >Cooking time: {cooking_time}</Card.Text>}
                     {difficulty && <Card.Text >Difficulty: {difficulty}</Card.Text>}
+                    {category && <Card.Text >Category: {category}</Card.Text>}
                 </div>
                 <div className={styles.CardIcons}>
                     {is_owner ? (
@@ -140,6 +144,12 @@ const Recipe = (props) => {
                         </OverlayTrigger>
                     )}
                 </div>
+            </Card.Body>
+            <Card.Body>
+                <Card.Subtitle className={styles.Subtitle}>Ingredients:</Card.Subtitle>
+                {ingredients && <Card.Text >{ingredients}</Card.Text>}
+                <Card.Subtitle className={styles.Subtitle}>Instructions:</Card.Subtitle>
+                {instructions && <Card.Text >{instructions}</Card.Text>}
             </Card.Body>
         </Card>
     )
