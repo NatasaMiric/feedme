@@ -25,8 +25,8 @@ function RecipeCreateForm() {
         title: "",
         ingredients: "",
         instructions: "",
-        category: "",
-        difficulty: "",
+        category: "appetizer",
+        difficulty: "easy",
         cooking_time: "",
         recipe_image: "",
     });
