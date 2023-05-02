@@ -1,0 +1,48 @@
+.Recipe {
+  background-color: #ffffff;
+  border: 1px solid #dadadf;
+  border-radius: 2px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.Recipe figure,
+h5 {
+  margin: 0 0;
+}
+
+.CardText {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.CardIcons {
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+}
+
+.Heart {
+  color: #e66e6c;
+}
+
+.Heart:hover {
+  color: #3a5265;
+}
+
+.HeartOutline:hover {
+  color: #e66e6c;
+}
+
+.Bookmark {
+  color: #329e7f;  
+}
+
+.Bookmark:hover {
+  color: #3a5265;
+}
+
+.BookmarkOutline:hover {
+  color:  #329e7f;
+}
