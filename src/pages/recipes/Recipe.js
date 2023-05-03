@@ -35,6 +35,17 @@ const Recipe = (props) => {
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
 
+    const details = recipeDetailPage ? (
+        <Card.Body>
+            <Card.Subtitle className={styles.Subtitle}>Ingredients:</Card.Subtitle>
+            {ingredients && <Card.Text >{ingredients}</Card.Text>}
+            <Card.Subtitle className={styles.Subtitle}>Instructions:</Card.Subtitle>
+            {instructions && <Card.Text >{instructions}</Card.Text>}
+        </Card.Body>
+    ) : (
+        <></>
+    );
+
     const handleLike = async () => {
         try {
             const { data } = await axiosRes.post("/likes/", { recipe: id });
@@ -145,12 +156,7 @@ const Recipe = (props) => {
                     )}
                 </div>
             </Card.Body>
-            <Card.Body>
-                <Card.Subtitle className={styles.Subtitle}>Ingredients:</Card.Subtitle>
-                {ingredients && <Card.Text >{ingredients}</Card.Text>}
-                <Card.Subtitle className={styles.Subtitle}>Instructions:</Card.Subtitle>
-                {instructions && <Card.Text >{instructions}</Card.Text>}
-            </Card.Body>
+            {details}
         </Card>
     )
 }
