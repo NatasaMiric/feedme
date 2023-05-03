@@ -78,6 +78,40 @@ const Recipe = (props) => {
         }
     };
 
+    const handleBookmark = async () => {
+        try {
+            const { data } = await axiosRes.post("/bookmarks/", { recipe: id });
+            setRecipes((prevRecipes) => ({
+                ...prevRecipes,
+                results: prevRecipes.results.map((recipe) => {
+                    return recipe.id === id 
+                    ? { ...recipe, bookmark_id: data.id }
+                        : recipe;
+                })
+            })
+            )
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    const handleRemoveBookmark = async () => {
+        try {
+            await axiosRes.delete(`/bookmarks/${bookmark_id}/`);
+            setRecipes((prevRecipes) => ({
+                ...prevRecipes,
+                results: prevRecipes.results.map((recipe) => {
+                    return recipe.id === id
+                        ? { ...recipe, bookmark_id: null }
+                        : recipe;
+                }),
+            }));
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+
     return (
         <Card className={styles.Recipe}>
             <Card.Body>
@@ -139,11 +173,11 @@ const Recipe = (props) => {
                             <i className="far fa-bookmark" />
                         </OverlayTrigger>
                     ) : bookmark_id ? (
-                        <span onClick={() => { }}>
+                        <span onClick={handleRemoveBookmark}>
                             <i className={`fas fa-bookmark ${styles.Bookmark}`} />
                         </span>
                     ) : currentUser ? (
-                        <span onClick={() => { }}>
+                        <span onClick={handleBookmark}>
                             <i className={`far fa-bookmark ${styles.BookmarkOutline}`} />
                         </span>
                     ) : (
