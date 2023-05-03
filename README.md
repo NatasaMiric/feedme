@@ -6,7 +6,7 @@ Welcome to the React front end project section.
 
 ### Deployed app 
 
-[Visit FeedMe]()
+[Visit FeedMe](https://feedme-react.herokuapp.com/)
 
 The repository for the Feedme API can be found here : [FeedMe API](https://github.com/NatasaMiric/feedme-api)
 
