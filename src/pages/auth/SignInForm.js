@@ -34,11 +34,11 @@ function SignInForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const data = await axios.post("/dj-rest-auth/login/", signInData);
+            const { data } = await axios.post("/dj-rest-auth/login/", signInData);            
             setCurrentUser(data.user);
             history.push("/");
         } catch (err) {
-            setErrors(err.response?.data);
+            setErrors(err.response?.data);           
         }
     };
     const handleChange = (event) => {

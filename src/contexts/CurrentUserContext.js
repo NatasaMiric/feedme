@@ -70,6 +70,7 @@ export const CurrentUserProvider = ({ children }) => {
     );
   }, [history]);
 
+  console.log("Current User: ", currentUser)
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <SetCurrentUserContext.Provider value={setCurrentUser}>
