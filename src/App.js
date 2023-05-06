@@ -8,6 +8,7 @@ import SignInForm from './pages/auth/SignInForm';
 import RecipeCreateForm from './pages/recipes/RecipeCreateForm';
 import RecipeDetailPage from './pages/recipes/RecipeDetailPage';
 import RecipesPage from './pages/recipes/RecipesPage';
+import RecipeEditForm from './pages/recipes/RecipeEditForm';
 import { useCurrentUser } from './contexts/CurrentUserContext';
 
 
@@ -37,6 +38,7 @@ function App() {
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/recipes/create" render={() => <RecipeCreateForm />} />
           <Route exact path="/recipes/:id" render={() => <RecipeDetailPage />} />
+          <Route exact path="/recipes/:id/edit" render={() => <RecipeEditForm />} />
           <Route render={() => <p>Page Not Found!</p>}></Route>
         </Switch>
       </Container>

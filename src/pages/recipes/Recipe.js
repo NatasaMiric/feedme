@@ -6,9 +6,10 @@ import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
+import { OptionsDropdown } from '../../components/OptionsDropdown';
 
 const Recipe = (props) => {
     const {
@@ -45,6 +46,12 @@ const Recipe = (props) => {
     ) : (
         <></>
     );
+
+    const history= useHistory();
+
+    const handleEdit = () => {
+        history.push(`/recipes/${id}/edit`);
+    };
 
     const handleLike = async () => {
         try {
@@ -122,7 +129,7 @@ const Recipe = (props) => {
                     </Link>
                     <div className="d-flex align-items-center">
                         <span>{updated_at}</span>
-                        {is_owner && recipeDetailPage && "..."}
+                        {is_owner && recipeDetailPage && <OptionsDropdown handleEdit={handleEdit}/>}
                     </div>
                 </Media>
             </Card.Body>
