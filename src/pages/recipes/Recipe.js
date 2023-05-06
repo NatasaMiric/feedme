@@ -47,10 +47,19 @@ const Recipe = (props) => {
         <></>
     );
 
-    const history= useHistory();
+    const history = useHistory();
 
     const handleEdit = () => {
         history.push(`/recipes/${id}/edit`);
+    };
+
+    const handleDelete = async () => {
+        try {
+            await axiosRes.delete(`/recipes/${id}/`);
+            history.goBack();
+        } catch (err) {
+            console.log(err);
+        }
     };
 
     const handleLike = async () => {
@@ -91,8 +100,8 @@ const Recipe = (props) => {
             setRecipes((prevRecipes) => ({
                 ...prevRecipes,
                 results: prevRecipes.results.map((recipe) => {
-                    return recipe.id === id 
-                    ? { ...recipe, bookmark_id: data.id }
+                    return recipe.id === id
+                        ? { ...recipe, bookmark_id: data.id }
                         : recipe;
                 })
             })
@@ -129,7 +138,11 @@ const Recipe = (props) => {
                     </Link>
                     <div className="d-flex align-items-center">
                         <span>{updated_at}</span>
-                        {is_owner && recipeDetailPage && <OptionsDropdown handleEdit={handleEdit}/>}
+                        {is_owner && recipeDetailPage && (
+                            <OptionsDropdown handleEdit={handleEdit}
+                                handleDelete={handleDelete}
+                            />
+                        )}
                     </div>
                 </Media>
             </Card.Body>
