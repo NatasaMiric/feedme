@@ -2,8 +2,13 @@
     display: inline-block;
     max-width: 50%;
     padding: 0px;
+    color: #323e48;
   }
   
+  .DropdownItem:hover {
+    background-color: #e66e6c;
+  }
+
   .Absolute {
     position: absolute;
     right: 0;
