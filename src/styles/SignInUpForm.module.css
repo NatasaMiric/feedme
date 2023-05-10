@@ -4,7 +4,7 @@
   border: 1px solid #f0f1f9;
   box-sizing: border-box;
   border-radius: 3px;
-  color: #323e48;
+  color: #3a5265;
   text-align: center;
   padding: 10px;
 }
@@ -17,7 +17,7 @@
   text-align: center;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #323e48;
+  color: #3a5265;
 }
 
 .Link {
@@ -32,7 +32,7 @@
 }
 
 .Link:hover {
-  color: #323e48;    
+  color: #3a5265;    
 }
 
 .Link span:hover { 
