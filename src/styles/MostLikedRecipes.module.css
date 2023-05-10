@@ -1,0 +1,15 @@
+.Content {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 2px;
+    border: 1px solid #dadadf;
+}
+
+.Link {
+    text-transform: lowercase;     
+}
+
+.Link:hover {
+    color: #e66e6c;
+    font-size: larger;      
+}

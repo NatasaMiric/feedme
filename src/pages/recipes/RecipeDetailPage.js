@@ -14,6 +14,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
+import MostLikedRecipes from "./MostLikedRecipes";
 
 function RecipeDetailPage() {
     const { id } = useParams();
@@ -43,7 +44,7 @@ function RecipeDetailPage() {
     return (
         <Row className="h-100">
             <Col className="py-2 p-0 p-lg-2" lg={8}>
-                <p>Most liked recipes for mobile</p>
+                < MostLikedRecipes mobile />
                 < Recipe {...recipe.results[0]} setRecipes={setRecipe} recipeDetailPage />
                 <Container className={appStyles.Content}>
                     {currentUser ? (
@@ -79,7 +80,7 @@ function RecipeDetailPage() {
                 </Container>
             </Col>
             <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-                Most liked recipes for desktop
+                <MostLikedRecipes />
             </Col>
         </Row>
     );

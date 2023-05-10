@@ -128,7 +128,7 @@ function RecipeCreateForm() {
                 <Form.Label>Category</Form.Label>
                 <Form.Control
                     as="select"
-                    name="category"
+                    name="category"                    
                     value={category}
                     onChange={handleChange}>
                     <option value="appetizer">Appetizer</option>
