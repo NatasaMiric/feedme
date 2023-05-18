@@ -44,3 +44,10 @@
   cursor: pointer;
 
 }
+
+.ButtonOutline {
+  color: #3a5265;
+  background-color: #eff3ef;
+  border: 1px solid #3a5265;
+  cursor: pointer;
+}

@@ -31,7 +31,7 @@ const MostLikedRecipes = ({ mobile }) => {
                 <>
                     <strong>Most liked recipes:</strong>
                     {mobile ? (
-                        <div className="d-flex justify-content-around">
+                        <div className="d-flex justify-content-around mt-3">
                             {likedRecipe.results.slice(0, 4).map((recipe) => (
                                 <Link to={`/recipes/${recipe.id}`} className={styles.Link}>
                                    <Avatar src={recipe.recipe_image} height={35} />                                    

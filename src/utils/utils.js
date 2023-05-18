@@ -1,5 +1,4 @@
 // this code is based on Code Institute Moments project
-
 import { axiosReq } from "../api/axiosDefaults";
 
 export const fetchMoreData = async (resource, setResource) => {

@@ -1,38 +1,20 @@
-import React, { useEffect, useState } from 'react';
+// this code is based on Code Institute Moments project
+
+import React from "react";
 import appStyles from '../../App.module.css';
 
 import Container from 'react-bootstrap/Container';
-import { axiosReq } from '../../api/axiosDefaults';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import Asset from "../../components/Asset";
+import { useProfileData } from "../../contexts/ProfileDataContext";
+import Profile from './Profile';
 
-const MostFollowedProfiles = ({ mobile }) => {
-    const [profileData, setProfileData] = useState({
-        mostFollowedProfiles: { results: [] },
-        pageProfile: { results: [] },
-    });
-    const { mostFollowedProfiles } = profileData;
-    const currentUser = useCurrentUser();
 
-    useEffect(() => {
-        const handleMount = async () => {
-            try {
-                const { data } = await axiosReq.get(
-                    '/profiles/?ordering=-followers_count'
-                )
-                setProfileData(prevState => ({
-                    ...prevState,
-                    mostFollowedProfiles: data,
-                }))
-            } catch (err) {
-                console.log(err)
-            }
-        }
-        handleMount();
-    }, [currentUser]);
+const MostFollowedProfiles = ({ mobile }) => {    
+    const { mostFollowedProfiles } = useProfileData(); 
+     
     return (
         <Container
-            className={`${appStyles.Content} ${mobile && "d-lg-none text-center mb-3"
+            className={`${appStyles.Content} ${mobile && "d-lg-none text-center mb-2"
                 }`}
         >
             {mostFollowedProfiles.results.length ? (
@@ -41,12 +23,12 @@ const MostFollowedProfiles = ({ mobile }) => {
                     {mobile ? (
                         <div className="d-flex justify-content-around">
                             {mostFollowedProfiles.results.slice(0, 4).map((profile) => (
-                                <p key={profile.id}>{profile.owner}</p>
+                                <Profile key={profile.id} profile={profile} mobile />
                             ))}
                         </div>
                     ) : (
                         mostFollowedProfiles.results.slice(0, 5).map((profile) => (
-                            <p key={profile.id}>{profile.owner}</p>
+                            <Profile key={profile.id} profile={profile} />
                         ))
                     )}
                 </>
