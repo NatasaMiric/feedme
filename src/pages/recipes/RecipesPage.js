@@ -16,11 +16,14 @@ import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import MostLikedRecipes from "./MostLikedRecipes";
+import MostFollowedProfiles from "../profiles/MostFollowedProfiles";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function RecipesPage({ message, filter = "" }) {
     const [recipes, setRecipes] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
+    const currentUser = useCurrentUser();
 
     const [query, setQuery] = useState("");
     useEffect(() => {
@@ -29,7 +32,7 @@ function RecipesPage({ message, filter = "" }) {
                 const { data } = await axiosReq.get(`/recipes/?${filter}search=${query}`);
                 setRecipes(data);
                 setHasLoaded(true);
-                console.log(filter)
+                console.log(filter);
             } catch (err) {
                 console.log(err);
             }
@@ -42,12 +45,13 @@ function RecipesPage({ message, filter = "" }) {
         return () => {
             clearTimeout(timer);
         };
-    }, [filter, pathname, query]);
+    }, [filter, pathname, query, currentUser]);
 
     return (
         <Row className="h-100">
             <Col className="py-2 p-0 p-lg-2" lg={8}>
-                <MostLikedRecipes mobile />
+                <MostLikedRecipes mobile />  
+                <MostFollowedProfiles mobile />                               
                 <i className={`fas fa-search ${styles.SearchIcon}`} />
                 <Form
                     className={styles.SearchBar}
@@ -87,8 +91,9 @@ function RecipesPage({ message, filter = "" }) {
                 )}
             </Col>
             <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-               < MostLikedRecipes />
-            </Col>
+               <div className="mb-3">< MostLikedRecipes /></div>
+               <div>< MostFollowedProfiles /></div>
+            </Col>            
         </Row>
     );
 }

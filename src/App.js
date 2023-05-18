@@ -27,6 +27,16 @@ function App() {
           render={() => (
           <RecipesPage message="No results found. Adjust the search keyword" />
           )} />
+          <Route
+            exact
+            path="/feed"
+            render={() => (
+              <RecipesPage
+                message="No results found. Adjust the search keyword or follow a user."
+                filter={`owner__followed__owner__profile=${profile_id}&`}
+              />
+            )}
+          />
           <Route 
           exact 
           path="/bookmarked" 
@@ -38,7 +48,7 @@ function App() {
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/recipes/create" render={() => <RecipeCreateForm />} />
           <Route exact path="/recipes/:id" render={() => <RecipeDetailPage />} />
-          <Route exact path="/recipes/:id/edit" render={() => <RecipeEditForm />} />
+          <Route exact path="/recipes/:id/edit" render={() => <RecipeEditForm />} />                    
           <Route render={() => <p>Page Not Found!</p>}></Route>
         </Switch>
       </Container>

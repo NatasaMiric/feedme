@@ -56,7 +56,7 @@ const Recipe = (props) => {
     const handleDelete = async () => {
         try {
             await axiosRes.delete(`/recipes/${id}/`);
-            history.goBack();
+            history.push('/');
         } catch (err) {
             console.log(err);
         }
@@ -131,7 +131,7 @@ const Recipe = (props) => {
         <Card className={styles.Recipe}>
             <Card.Body>
                 <Media className="align-items-center justify-content-between">
-                    <Link to={`/profiles/${profile_id}`}>
+                    <Link to={`/profiles/${profile_id}`} className={styles.Owner}>
                         <Avatar src={profile_image} height={55} />
                         {owner}
                     </Link>
@@ -215,4 +215,4 @@ const Recipe = (props) => {
     )
 }
 
-export default Recipe
+export default Recipe;

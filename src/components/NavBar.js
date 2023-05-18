@@ -6,9 +6,9 @@ import logo from '../assets/logo.png'
 import styles from '../styles/NavBar.module.css';
 import { NavLink } from "react-router-dom";
 import { useCurrentUser, useSetCurrentUser } from "../contexts/CurrentUserContext";
-import Avatar from "./Avatar";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
+import Avatar from "./Avatar";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -45,6 +45,13 @@ const NavBar = () => {
 
   const loggedInIcons = <>
     <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/feed"
+    >
+      <i className="fas fa-stream"></i>Feed
+    </NavLink>
+    <NavLink
       activeClassName={styles.Active}
       to="/recipes/create"
     >
@@ -63,9 +70,10 @@ const NavBar = () => {
       <i className="fas fa-sign-out-alt"></i>Sign out
     </NavLink>
     <NavLink
+      className={styles.NavLink}
       to={`/profiles/${currentUser?.profile_id}`}
     >
-      <Avatar src={currentUser?.profile_image} text="Profile" height={35} />
+      <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
     </NavLink>
   </>;
 

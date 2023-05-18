@@ -11,6 +11,11 @@ h5 {
   margin: 0 0;
 }
 
+.Owner:hover {
+  color: #e66e6c;
+  font-weight: bold;
+}
+
 .CardText {
   display: flex;
   flex-direction: row;
