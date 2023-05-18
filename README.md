@@ -24,7 +24,7 @@ The goal of this application is to give users the possibility to create, update 
         * [Typography](#Typography)
         * [Imagery](#Imagery)
     * [Project planning](#Project-planning)
-
+* [Most reused components](#most-reused-components)
 * [Features](#Features)
   * [Existing features](#Existing-features)
   * [Future Features](#Future-features)
@@ -37,15 +37,13 @@ The goal of this application is to give users the possibility to create, update 
 
 * [Deployment](#Deployment)
 
-* [Credits](#Credits)    
+* [Credits](#Credits)   
 
-* [Acknowledgments](#Acknowledgments)
 ----------------------------
 
 ## UX
 
 ### User Stories
-
 
 | Category | As | I want to | so that I can | UI components |
 | :--- | :--- | :--- | :--- | :--- |
@@ -79,10 +77,11 @@ The goal of this application is to give users the possibility to create, update 
 | profiles| visiting user |  view statistics about a specific user: bio,number of posted recipes | know how active they are | ProfilePage, Recipe |
 | search | visiting user | search for recipes by author or title | find the recipes I am most interested in | RecipesPage |
 | filter | visiting user | filter recipes by category and difficulty  | easier find the recipes that I am interested in | RecipesPage |
+| followers | logged in user | follow a profile | show my interest in someone's content | Profile follow button |
+| followers | logged in user | unfollow a profile | show that my interest in someone's content has faded away and remove their posts from my feed | Profile (un) follow button |
 
 
 ### Wireframes
-
 ### Design
 #### Color scheme
 
@@ -104,17 +103,22 @@ All the images for the recipes posts have been borrowed from [unsplash](https://
 
 ### Project planning
 
-The project was developed using an Agile approach by defining the epics and user stories that were implemented in 5 sprints, each lasting of one week.
+The project was developed using an Agile approach by defining the epics and user stories that were implemented in 6 sprints, each lasting of approximately one week.
 
 I used the GitHub project for planning and creating epics and user stories that were broken into tasks and each user story had assigned labels according to the app that it belong to (API or React Front-End) and connected to the corresponding epic. MoSCoW prioritization was assigned to each user story to ensure that all core features are completed first.
 
 I decided to have one Kanban board where will I implement issues for both API and frontend application which I considered more practical and can be accessed [here](https://github.com/users/NatasaMiric/projects/4/views/1) to see more details for each ticket.
 
+## Most reused components, hooks and contexts
+
 ## Features
+
 ### Existing features
+
 ### Future Features
 
 ## Technologies Used
+
 ### Languages Used
 
 * HTML 
@@ -128,11 +132,17 @@ I decided to have one Kanban board where will I implement issues for both API an
 * React-router-dom 5.3.0 -  simplifies the routing and navigation without the need to refresh the page
 * axios - makes HTTP requests from the browser and handle the transformation of request and response data.
 * react-infinite-scroll-component 6.1.0 - used for automatic loading of long lists of data
-* JWT decode 3.1.2 
+* JWT decode 3.1.2 - used for decoding JWT tokens.
+
+## Testing
+
+## Deployment
 
 ## Credits
 
-This project was inspired by [Code Institute Moments project](https://github.com/Code-Institute-Solutions/moments)
+This project was inspired by [Code Institute Moments project](https://github.com/Code-Institute-Solutions/moments) 
+
+The initial template for the project was made by [Code Institute](https://github.com/Code-Institute-Org/cra-template-moments)
 
 Logo image: 
 https://www.flaticon.com/free-icon/cooking_4478454?term=cooking&page=1&position=31&origin=search&related_id=4478454
@@ -143,5 +153,5 @@ https://unsplash.com/photos/hwy3W3qFjgM?utm_source=unsplash&utm_medium=referral&
 No results image:
 https://www.clipartmax.com/middle/m2H7H7H7H7b1i8b1_search-results-are-finished-no-results-found-cartoon/
 
-### Acknowledgments
+
 
