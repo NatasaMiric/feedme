@@ -7,6 +7,7 @@
   margin-left: 2px;
   margin-right: 2px;
   min-width: 75px;
+  outline: none;
 }
 
 .Button:hover {
@@ -15,16 +16,17 @@
   cursor: pointer;
 }
 
-.Button:hover:active {
+/* .Button:hover:active {
   background-color: #3a5265 !important;
-}
+} */
 
-.Button:active {
+/* .Button:active {
   background-color: #3a5265 !important;
-}
+  border: none;
+} */
 
 .Button:focus {
-  background-color: #3a5265;
+  background-color: #3a5265;   
 }
 
 .Wide {
@@ -34,27 +36,28 @@
 
 .Submit {
   background-color: #3a5265;
-  color: #eff3ef;  
-  letter-spacing: 1px;
+  color: #eff3ef;
+  letter-spacing: 1px;  
 }
 
-.Submit:hover { 
-  background-color: #e66e6c;
-  border-color: #e66e6c;
+.Submit:hover {
+  background-color: #e66e6c;  
+  border-color: transparent;
   cursor: pointer;
-
 }
 
-.ButtonOutline {
+.Unfollow {
+  color: #3a5265;
+  background-color: #eff3ef;
+  border: 1px solid #3a5265;
+  cursor: pointer;  
+}
+
+.Unfollow:hover {  
+  font-size: 1rem;
   color: #3a5265;
   background-color: #eff3ef;
   border: 1px solid #3a5265;
   cursor: pointer;
 }
 
-.ButtonOutline:hover {
-  color:#eff3ef;
-  background-color: #3a5265;
-  border: 1px solid #e66e6c;
-  cursor: pointer;
-}

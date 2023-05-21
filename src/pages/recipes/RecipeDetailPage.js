@@ -15,6 +15,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
 import MostLikedRecipes from "./MostLikedRecipes";
+import MostFollowedProfiles from "../profiles/MostFollowedProfiles";
 
 function RecipeDetailPage() {
     const { id } = useParams();
@@ -45,6 +46,7 @@ function RecipeDetailPage() {
         <Row className="h-100">
             <Col className="py-2 p-0 p-lg-2" lg={8}>
                 < MostLikedRecipes mobile />
+                < MostFollowedProfiles mobile />
                 < Recipe {...recipe.results[0]} setRecipes={setRecipe} recipeDetailPage />
                 <Container className={appStyles.Content}>
                     {currentUser ? (
@@ -80,7 +82,8 @@ function RecipeDetailPage() {
                 </Container>
             </Col>
             <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-                <MostLikedRecipes />
+                <div className="mb-3"><MostLikedRecipes /></div>
+                <div>< MostFollowedProfiles /></div>
             </Col>
         </Row>
     );
