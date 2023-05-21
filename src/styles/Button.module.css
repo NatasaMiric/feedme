@@ -16,14 +16,14 @@
   cursor: pointer;
 }
 
-/* .Button:hover:active {
+.Button:hover:active {
   background-color: #3a5265 !important;
-} */
+}
 
-/* .Button:active {
+.Button:active {
   background-color: #3a5265 !important;
   border: none;
-} */
+}
 
 .Button:focus {
   background-color: #3a5265;   
@@ -46,10 +46,23 @@
   cursor: pointer;
 }
 
+.Follow {
+  background-color: #329e7f;
+  color: #eff3ef;
+  border: transparent;
+}
+
+.Follow:hover {
+  color: #3a5265;
+  background-color: #eff3ef;
+  border: 1px solid #329e7f;
+  font-size: 1rem;
+}
+
 .Unfollow {
   color: #3a5265;
   background-color: #eff3ef;
-  border: 1px solid #3a5265;
+  border: 1px solid #329e7f;
   cursor: pointer;  
 }
 

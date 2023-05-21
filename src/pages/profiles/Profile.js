@@ -40,7 +40,7 @@ const Profile = (props) => {
               </Button>
             ) : (
               <Button
-                className={`${btnStyles.Button} ${btnStyles.Submit} `}
+                className={`${btnStyles.Button} ${btnStyles.Follow} `}
                 onClick={() => handleFollow(profile)}
               >
                 follow

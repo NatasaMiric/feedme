@@ -11,23 +11,25 @@ import RecipesPage from './pages/recipes/RecipesPage';
 import RecipeEditForm from './pages/recipes/RecipeEditForm';
 import { useCurrentUser } from './contexts/CurrentUserContext';
 import ProfilePage from './pages/profiles/ProfilePage';
-
+import UsernameForm from "./pages/profiles/UsernameForm";
+import UserPasswordForm from "./pages/profiles/UserPasswordForm";
+import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 
 function App() {
   const currentUser = useCurrentUser();
-  const profile_id = currentUser?.profile_id || "" ;
+  const profile_id = currentUser?.profile_id || "";
 
   return (
     <div className={styles.App}>
       <NavBar />
       <Container className={styles.Main}>
         <Switch>
-          <Route 
-          exact 
-          path="/" 
-          render={() => (
-          <RecipesPage message="No results found. Adjust the search keyword" />
-          )} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <RecipesPage message="No results found. Adjust the search keyword" />
+            )} />
           <Route
             exact
             path="/feed"
@@ -38,19 +40,34 @@ function App() {
               />
             )}
           />
-          <Route 
-          exact 
-          path="/bookmarked" 
-          render={() => (
-          <RecipesPage message="No results found. Adjust the search keyword or bookmark a recipe" 
-          filter={`bookmarks__owner__profile=${profile_id}&ordering=-bookmarks__created_at&`} />
-          )} />
+          <Route
+            exact
+            path="/bookmarked"
+            render={() => (
+              <RecipesPage message="No results found. Adjust the search keyword or bookmark a recipe"
+                filter={`bookmarks__owner__profile=${profile_id}&ordering=-bookmarks__created_at&`} />
+            )} />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/recipes/create" render={() => <RecipeCreateForm />} />
           <Route exact path="/recipes/:id" render={() => <RecipeDetailPage />} />
           <Route exact path="/recipes/:id/edit" render={() => <RecipeEditForm />} />
-          <Route exact path="/profiles/:id" render ={() => <ProfilePage />}/>                    
+          <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
+          <Route
+            exact
+            path="/profiles/:id/edit/username"
+            render={() => <UsernameForm />}
+          />
+          <Route
+            exact
+            path="/profiles/:id/edit/password"
+            render={() => <UserPasswordForm />}
+          />
+          <Route
+            exact
+            path="/profiles/:id/edit"
+            render={() => <ProfileEditForm />}
+          />
           <Route render={() => <p>Page Not Found!</p>}></Route>
         </Switch>
       </Container>

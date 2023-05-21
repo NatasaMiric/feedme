@@ -22,6 +22,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Recipe from "../recipes/Recipe";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
+import { ProfileEditDropdown } from "../../components/OptionsDropdown";
 
 
 function ProfilePage() {
@@ -57,6 +58,7 @@ function ProfilePage() {
 
     const userProfile = (
         <>
+            {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
             <Row noGutters className="px-3 text-center">
                 <Col lg={3} className="text-lg-left">
                     <Image className={styles.ProfileImage}
@@ -93,7 +95,7 @@ function ProfilePage() {
                             </Button>
                         ) : (
                             <Button
-                                className={`${btnStyles.Button} ${btnStyles.Submit}`}
+                                className={`${btnStyles.Button} ${btnStyles.Follow}`}
                                 onClick={() => handleFollow(profile)}
                             >
                                 follow

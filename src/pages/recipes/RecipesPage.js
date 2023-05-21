@@ -96,6 +96,6 @@ function RecipesPage({ message, filter = "" }) {
             </Col>            
         </Row>
     );
-}
+};
 
 export default RecipesPage;

@@ -58,6 +58,7 @@ i:hover {
     cursor: pointer;
     transition: color ease-in-out 0.3s;
     color: #eff3ef;
+    background-color: #e66e6c;
 }
 
 figure {
