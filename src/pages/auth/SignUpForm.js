@@ -14,6 +14,7 @@ import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
 import axios from "axios";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const SignUpForm = () => {
   const [signUpData, setSignUpData] = useState({
@@ -22,10 +23,9 @@ const SignUpForm = () => {
     password2: "",
   });
   const { username, password1, password2 } = signUpData;
-
   const history = useHistory();
-
   const [errors, setErrors] = useState({});
+  useRedirect("loggedIn")
 
   const handleChange = (event) => {
     setSignUpData({
