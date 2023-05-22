@@ -18,10 +18,12 @@ import appStyles from "../../App.module.css";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
 import { setTokenTimestamp } from "../../utils/utils";
+import useAlert from "../../hooks/useAlert";
 
 function SignInForm() {
     const setCurrentUser = useSetCurrentUser();
     useRedirect("loggedIn")
+    const { setAlert } = useAlert();
 
     const [signInData, setSignInData] = useState({
         username: "",
@@ -39,6 +41,7 @@ function SignInForm() {
             const { data } = await axios.post("/dj-rest-auth/login/", signInData);            
             setCurrentUser(data.user);
             setTokenTimestamp(data);
+            setAlert('Login successful!', 'success');
             history.goBack();
         } catch (err) {
             setErrors(err.response?.data);           

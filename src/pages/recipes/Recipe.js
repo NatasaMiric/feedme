@@ -11,6 +11,7 @@ import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { OptionsDropdown } from '../../components/OptionsDropdown';
 import ModalAlert from '../../components/ModalAlert';
+import useAlert from "../../hooks/useAlert";
 
 const Recipe = (props) => {
     const {
@@ -49,7 +50,7 @@ const Recipe = (props) => {
     );
 
     const history = useHistory();
-
+    const { setAlert } = useAlert();
     const [show, setShow] = useState(false);
 
     const showDeleteModal = (event) => {
@@ -64,6 +65,7 @@ const Recipe = (props) => {
         try {
             await axiosRes.delete(`/recipes/${id}/`);
             history.push('/');
+            setAlert('Recipe has been deleted!', 'success')
         } catch (err) {
             console.log(err);
         }
@@ -112,11 +114,11 @@ const Recipe = (props) => {
                         ? { ...recipe, bookmark_id: data.id }
                         : recipe;
                 })
-            })
-            )
+            }))
         } catch (err) {
             console.log(err);
         }
+
     };
 
     const handleRemoveBookmark = async () => {
@@ -219,12 +221,12 @@ const Recipe = (props) => {
                 </div>
             </Card.Body>
             {details}
-            <ModalAlert 
-            show= {show}
-            handleClose={() => setShow(false)}
-            deleteConfirm={handleDelete}
-            title= "Delete confirmation"
-            message={"Are you sure that you want to delete this item?"}
+            <ModalAlert
+                show={show}
+                handleClose={() => setShow(false)}
+                deleteConfirm={handleDelete}
+                title="Delete confirmation"
+                message={"Are you sure that you want to delete this item?"}
             />
         </Card>
     )

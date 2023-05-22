@@ -15,6 +15,7 @@ import appStyles from "../../App.module.css";
 
 import axios from "axios";
 import { useRedirect } from "../../hooks/useRedirect";
+import useAlert from "../../hooks/useAlert";
 
 const SignUpForm = () => {
   const [signUpData, setSignUpData] = useState({
@@ -26,6 +27,7 @@ const SignUpForm = () => {
   const history = useHistory();
   const [errors, setErrors] = useState({});
   useRedirect("loggedIn")
+  const { setAlert } = useAlert();
 
   const handleChange = (event) => {
     setSignUpData({
@@ -37,7 +39,8 @@ const SignUpForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post('/dj-rest-auth/registration/', signUpData)
+      await axios.post('/dj-rest-auth/registration/', signUpData) 
+      setAlert('Successfully signed up!', 'success');     
       history.push('/signin')
     } catch (err) {
       setErrors(err.response?.data);
