@@ -162,7 +162,7 @@ const Recipe = (props) => {
                 </Media>
             </Card.Body>
             <Link to={`/recipes/${id}`}>
-                <Card.Img src={recipe_image} alt={title} />
+                <Card.Img src={recipe_image} alt={title} className={styles.RecipeImage} />
             </Link>
             <Card.Body >
                 {title && <Card.Title className={styles.Header}>{title}</Card.Title>}

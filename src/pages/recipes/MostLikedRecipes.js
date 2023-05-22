@@ -37,7 +37,7 @@ const MostLikedRecipes = ({ mobile }) => {
                         <div className="d-flex justify-content-around mt-3">
                             {likedRecipe.results.slice(0, 4).map((recipe) => (
                                 <Link to={`/recipes/${recipe.id}`} className={styles.Link}>
-                                    <Avatar src={recipe.recipe_image} height={35} />
+                                    <Avatar src={recipe.recipe_image} height={50} />
                                     <p key={recipe.id}>{recipe.title}</p>
                                 </Link>
                             ))}
@@ -47,7 +47,7 @@ const MostLikedRecipes = ({ mobile }) => {
                             <div className='mt-3'>
                                 <Link to={`/recipes/${recipe.id}`} className={styles.Link}>
                                     <span>
-                                        <Avatar src={recipe.recipe_image} height={35} />
+                                        <Avatar src={recipe.recipe_image} height={55} />
                                     </span>
                                     <span key={recipe.id} className='mb-2'>{recipe.title}</span>
                                 </Link>

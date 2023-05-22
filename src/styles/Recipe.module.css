@@ -1,7 +1,7 @@
 .Recipe {
   background-color: #ffffff;
   border: 1px solid #dadadf;
-  border-radius: 2px;
+  border-radius: 5px;
   margin-bottom: 16px;
   text-align: center;
 }
@@ -9,6 +9,10 @@
 .Recipe figure,
 h5 {
   margin: 0 0;
+}
+
+.RecipeImage {
+  width: 80%;
 }
 
 .Owner:hover {
@@ -73,3 +77,4 @@ h5 {
   text-transform: uppercase;
   color: #3a5265;
 }
+
