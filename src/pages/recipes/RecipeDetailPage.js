@@ -16,6 +16,7 @@ import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
 import MostLikedRecipes from "./MostLikedRecipes";
 import MostFollowedProfiles from "../profiles/MostFollowedProfiles";
+import useAlert from "../../hooks/useAlert";
 
 function RecipeDetailPage() {
     const { id } = useParams();
@@ -24,6 +25,7 @@ function RecipeDetailPage() {
     const currentUser = useCurrentUser();
     const profile_image = currentUser?.profile_image;
     const [comments, setComments] = useState({ results: [] });
+    const { setAlert } = useAlert();
 
     useEffect(() => {
         const handleMount = async () => {
@@ -35,12 +37,13 @@ function RecipeDetailPage() {
                 setRecipe({ results: [recipe] });
                 setComments(comments);
             } catch (err) {
-                console.log(err);
+                //console.log(err);
+                setAlert("Something went wrong, please try again!", "danger");
             }
         };
 
         handleMount();
-    }, [id]);
+    }, [id, setAlert]);
 
     return (
         <Row className="h-100">

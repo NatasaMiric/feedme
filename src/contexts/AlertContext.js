@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState } from "react";
 
 // This code is based on Jeffrey Yu's blog
 // https://dev.to/jeffreythecoder/set-up-react-global-alert-popup-in-10mins-36l3

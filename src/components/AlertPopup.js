@@ -1,5 +1,5 @@
-import Alert from 'react-bootstrap/Alert';
-import useAlert from '../hooks/useAlert';
+import Alert from "react-bootstrap/Alert";
+import useAlert from "../hooks/useAlert";
 import styles from "../styles/Alert.module.css";
 
 // This code is based on Jeffrey Yu's blog

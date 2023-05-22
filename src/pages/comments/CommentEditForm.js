@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import { axiosRes } from "../../api/axiosDefaults";
-
+import useAlert from "../../hooks/useAlert";
 import styles from "../../styles/CommentCreateEditForm.module.css";
 
 function CommentEditForm(props) {
   const { id, content, setDisplayEditForm, setComments } = props;
-
   const [editContent, setEditContent] = useState(content);
+  const { setAlert } = useAlert();
 
   const handleChange = (event) => {
     setEditContent(event.target.value);
@@ -34,7 +33,8 @@ function CommentEditForm(props) {
       }));
       setDisplayEditForm(false);
     } catch (err) {
-      console.log(err);
+      //console.log(err);
+      setAlert("Something went wrong, please try again!", "danger");
     }
   };
 

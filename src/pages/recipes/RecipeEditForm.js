@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -7,11 +6,10 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
-
 import styles from "../../styles/RecipeCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-
+import useAlert from "../../hooks/useAlert";
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 
@@ -36,6 +34,7 @@ function RecipeEditForm() {
     const imageInput = useRef(null);
     const history = useHistory();
     const { id } = useParams();
+    const { setAlert } = useAlert();
 
     useEffect(() => {
         const handleMount = async () => {
@@ -49,12 +48,13 @@ function RecipeEditForm() {
                     cooking_time, recipe_image
                 }) : history.push("/");
             } catch (err) {
-                console.log(err);
+                //console.log(err);
+                setAlert("Something went wrong, please try again!", "danger");
             }
         };
 
         handleMount();
-    }, [history, id]);
+    }, [history, id, setAlert]);
 
     const handleChange = (event) => {
         setRecipeData({

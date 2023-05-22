@@ -2,7 +2,6 @@
 // https://github.com/Code-Institute-Solutions/moments/blob/703c2f453c98e61f9df91981f8df973640569afc/src/pages/profiles/UserPasswordForm.js
 
 import React, { useEffect, useState } from "react";
-
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -16,11 +15,14 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+import useAlert from "../../hooks/useAlert";
 
 const UserPasswordForm = () => {
   const history = useHistory();
   const { id } = useParams();
   const currentUser = useCurrentUser();
+
+  const { setAlert } = useAlert();
 
   const [userData, setUserData] = useState({
     new_password1: "",
@@ -49,6 +51,7 @@ const UserPasswordForm = () => {
     try {
       await axiosRes.post("/dj-rest-auth/password/change/", userData);
       history.goBack();
+      setAlert('Password updated','success');
     } catch (err) {
       console.log(err);
       setErrors(err.response?.data);

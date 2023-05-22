@@ -23,7 +23,7 @@ import Recipe from "../recipes/Recipe";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import { ProfileEditDropdown } from "../../components/OptionsDropdown";
-
+import useAlert from "../../hooks/useAlert";
 
 function ProfilePage() {
     const [hasLoaded, setHasLoaded] = useState(false);
@@ -35,6 +35,7 @@ function ProfilePage() {
     const is_owner = currentUser?.username === profile?.owner;
 
     const [profilePosts, setProfilePosts] = useState({ results: [] });
+    const { setAlert } = useAlert();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -50,11 +51,12 @@ function ProfilePage() {
                 setProfilePosts(profilePosts);
                 setHasLoaded(true);
             } catch (err) {
-                console.log(err);
+                //console.log(err);
+                setAlert("Something went wrong,please try again!", "danger");
             }
         };
         fetchData();
-    }, [id, setProfileData]);
+    }, [id, setProfileData, setAlert]);
 
     const userProfile = (
         <>

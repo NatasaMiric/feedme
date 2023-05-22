@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
 import Recipe from "./Recipe";
 import NoResults from "../../assets/no-results.png";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/RecipesPage.module.css";
-
 import { useLocation } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import Asset from "../../components/Asset";
@@ -18,14 +15,17 @@ import { fetchMoreData } from "../../utils/utils";
 import MostLikedRecipes from "./MostLikedRecipes";
 import MostFollowedProfiles from "../profiles/MostFollowedProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import useAlert from "../../hooks/useAlert";
 
 function RecipesPage({ message, filter = "" }) {
     const [recipes, setRecipes] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
     const currentUser = useCurrentUser();
+    const { setAlert } = useAlert();
 
     const [query, setQuery] = useState("");
+    
     useEffect(() => {
         const fetchRecipes = async () => {
             try {
@@ -34,7 +34,8 @@ function RecipesPage({ message, filter = "" }) {
                 setHasLoaded(true);
                 console.log(filter);
             } catch (err) {
-                console.log(err);
+                //console.log(err);
+                setAlert("Something went wrong, please try again!", "danger");
             }
         };
 
@@ -45,7 +46,7 @@ function RecipesPage({ message, filter = "" }) {
         return () => {
             clearTimeout(timer);
         };
-    }, [filter, pathname, query, currentUser]);
+    }, [filter, pathname, query, currentUser, setAlert]);
 
     return (
         <Row className="h-100">

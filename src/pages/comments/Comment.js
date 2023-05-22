@@ -7,7 +7,8 @@ import styles from "../../styles/Comment.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { OptionsDropdown } from "../../components/OptionsDropdown";
 import { axiosRes } from "../../api/axiosDefaults";
-import ModalAlert from '../../components/ModalAlert';
+import ModalAlert from "../../components/ModalAlert";
+import useAlert from "../../hooks/useAlert";
 
 const Comment = (props) => {
   const {
@@ -24,7 +25,7 @@ const Comment = (props) => {
   const [displayEditForm, setDisplayEditForm] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
-
+  const { setAlert } = useAlert();
   const [show, setShow] = useState(false);
 
   const showDeleteModal = (event) => {
@@ -44,8 +45,9 @@ const Comment = (props) => {
         ...prevComments,
         results: prevComments.results.filter((comment) => comment.id !== id),
       }));
+      setAlert("Your comment is deleted successfuly!", "success");
     } catch (err) {
-
+      setAlert("Something went wrong, please try again!", "danger");
     };
     setShow(false);
   };

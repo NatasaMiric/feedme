@@ -16,7 +16,7 @@ import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../../contexts/CurrentUserContext";
-
+import useAlert from "../../hooks/useAlert";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
@@ -29,6 +29,8 @@ const UsernameForm = () => {
 
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
+
+  const { setAlert } = useAlert();
 
   useEffect(() => {
     if (currentUser?.profile_id?.toString() === id) {
@@ -49,8 +51,9 @@ const UsernameForm = () => {
         username,
       }));
       history.goBack();
+      setAlert("Username is updated!", "success");
     } catch (err) {
-      console.log(err);
+      //console.log(err);
       setErrors(err.response?.data);
     }
   };

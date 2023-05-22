@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import styles from '../../styles/Recipe.module.css';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
+import React, { useState } from "react";
+import styles from "../../styles/Recipe.module.css";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
@@ -9,8 +9,8 @@ import Tooltip from "react-bootstrap/Tooltip";
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
-import { OptionsDropdown } from '../../components/OptionsDropdown';
-import ModalAlert from '../../components/ModalAlert';
+import { OptionsDropdown } from "../../components/OptionsDropdown";
+import ModalAlert from "../../components/ModalAlert";
 import useAlert from "../../hooks/useAlert";
 
 const Recipe = (props) => {
@@ -33,7 +33,7 @@ const Recipe = (props) => {
         updated_at,
         recipeDetailPage,
         setRecipes,
-    } = props
+    } = props;
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
@@ -67,7 +67,8 @@ const Recipe = (props) => {
             history.push('/');
             setAlert('Recipe has been deleted!', 'success')
         } catch (err) {
-            console.log(err);
+            //console.log(err);
+            setAlert("Something went wrong, please try again!", "danger");
         }
         setShow(false);
     };
@@ -84,7 +85,8 @@ const Recipe = (props) => {
                 }),
             }));
         } catch (err) {
-            console.log(err);
+            //console.log(err);
+            setAlert("Something went wrong, please try again!", "danger");
         }
     };
 
@@ -100,7 +102,8 @@ const Recipe = (props) => {
                 }),
             }));
         } catch (err) {
-            console.log(err);
+            //console.log(err);
+            setAlert("Something went wrong, please try again!", "danger");
         }
     };
 
@@ -116,7 +119,8 @@ const Recipe = (props) => {
                 })
             }))
         } catch (err) {
-            console.log(err);
+            //console.log(err);
+            setAlert("Something went wrong, please try again!", "danger");
         }
 
     };
@@ -133,7 +137,8 @@ const Recipe = (props) => {
                 }),
             }));
         } catch (err) {
-            console.log(err);
+            //console.log(err);
+            setAlert("Something went wrong, please try again!", "danger");
         }
     };
 
