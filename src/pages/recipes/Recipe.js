@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../../styles/Recipe.module.css';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 
@@ -10,6 +10,7 @@ import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { OptionsDropdown } from '../../components/OptionsDropdown';
+import ModalAlert from '../../components/ModalAlert';
 
 const Recipe = (props) => {
     const {
@@ -49,6 +50,12 @@ const Recipe = (props) => {
 
     const history = useHistory();
 
+    const [show, setShow] = useState(false);
+
+    const showDeleteModal = (event) => {
+        setShow(true);
+    };
+
     const handleEdit = () => {
         history.push(`/recipes/${id}/edit`);
     };
@@ -60,6 +67,7 @@ const Recipe = (props) => {
         } catch (err) {
             console.log(err);
         }
+        setShow(false);
     };
 
     const handleLike = async () => {
@@ -140,7 +148,7 @@ const Recipe = (props) => {
                         <span>{updated_at}</span>
                         {is_owner && recipeDetailPage && (
                             <OptionsDropdown handleEdit={handleEdit}
-                                handleDelete={handleDelete}
+                                handleDelete={showDeleteModal}
                             />
                         )}
                     </div>
@@ -211,6 +219,13 @@ const Recipe = (props) => {
                 </div>
             </Card.Body>
             {details}
+            <ModalAlert 
+            show= {show}
+            handleClose={() => setShow(false)}
+            deleteConfirm={handleDelete}
+            title= "Delete confirmation"
+            message={"Are you sure that you want to delete this item?"}
+            />
         </Card>
     )
 }

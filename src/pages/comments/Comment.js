@@ -7,6 +7,7 @@ import styles from "../../styles/Comment.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { OptionsDropdown } from "../../components/OptionsDropdown";
 import { axiosRes } from "../../api/axiosDefaults";
+import ModalAlert from '../../components/ModalAlert';
 
 const Comment = (props) => {
   const {
@@ -24,6 +25,12 @@ const Comment = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
+  const [show, setShow] = useState(false);
+
+  const showDeleteModal = (event) => {
+      setShow(true);
+  };
+
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/comments/${id}/`)
@@ -39,7 +46,8 @@ const Comment = (props) => {
       }));
     } catch (err) {
 
-    }
+    };
+    setShow(false);
   };
 
   return (
@@ -67,10 +75,17 @@ const Comment = (props) => {
         {is_owner && !displayEditForm && (
           <OptionsDropdown
             handleEdit={() => setDisplayEditForm(true)}
-            handleDelete={handleDelete}
+            handleDelete={showDeleteModal}
           />
         )}
       </Media>
+      <ModalAlert 
+            show= {show}
+            handleClose={() => setShow(false)}
+            deleteConfirm={handleDelete}
+            title= "Delete confirmation"
+            message={"Are you sure that you want to delete this comment?"}
+            />
     </>
   );
 };
