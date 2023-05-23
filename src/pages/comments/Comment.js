@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Media } from "react-bootstrap";
+import Media from "react-bootstrap/Media";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import CommentEditForm from "./CommentEditForm";
@@ -29,7 +29,7 @@ const Comment = (props) => {
   const [show, setShow] = useState(false);
 
   const showDeleteModal = (event) => {
-      setShow(true);
+    setShow(true);
   };
 
   const handleDelete = async () => {
@@ -81,13 +81,13 @@ const Comment = (props) => {
           />
         )}
       </Media>
-      <ModalAlert 
-            show= {show}
-            handleClose={() => setShow(false)}
-            deleteConfirm={handleDelete}
-            title= "Delete confirmation"
-            message={"Are you sure that you want to delete this comment?"}
-            />
+      <ModalAlert
+        show={show}
+        handleClose={() => setShow(false)}
+        deleteConfirm={handleDelete}
+        title="Delete confirmation"
+        message={"Are you sure that you want to delete this comment?"}
+      />
     </>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "../../styles/Recipe.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-
 import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
@@ -12,6 +11,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 import { OptionsDropdown } from "../../components/OptionsDropdown";
 import ModalAlert from "../../components/ModalAlert";
 import useAlert from "../../hooks/useAlert";
+
 
 const Recipe = (props) => {
     const {

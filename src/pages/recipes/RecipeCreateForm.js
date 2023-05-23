@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -8,12 +7,10 @@ import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
 import Upload from "../../assets/uploadimage.png";
-
 import styles from "../../styles/RecipeCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
-
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
@@ -72,7 +69,7 @@ function RecipeCreateForm() {
             const { data } = await axiosReq.post("/recipes/", formData);
             history.push(`/recipes/${data.id}/`);
         } catch (err) {
-            console.log(err);
+            //console.log(err);
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
             }

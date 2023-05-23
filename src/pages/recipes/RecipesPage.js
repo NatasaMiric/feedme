@@ -17,6 +17,7 @@ import MostFollowedProfiles from "../profiles/MostFollowedProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import useAlert from "../../hooks/useAlert";
 
+
 function RecipesPage({ message, filter = "" }) {
     const [recipes, setRecipes] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);

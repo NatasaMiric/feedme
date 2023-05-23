@@ -8,6 +8,7 @@ import Avatar from "../../components/Avatar";
 import styles from "../../styles/MostLikedRecipes.module.css";
 import useAlert from "../../hooks/useAlert";
 
+
 const MostLikedRecipes = ({ mobile }) => {
     const [likedRecipe, setLikedRecipe] = useState({ results: [] });
     const { id } = useParams;
