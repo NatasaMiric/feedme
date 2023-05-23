@@ -11,7 +11,7 @@ const initialState = {
 
 const AlertContext = createContext({
   ...initialState,
-  setAlert: () => {},
+  setAlert: () => { },
 });
 
 export const AlertProvider = ({ children }) => {

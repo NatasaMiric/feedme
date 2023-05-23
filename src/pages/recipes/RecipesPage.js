@@ -92,7 +92,7 @@ function RecipesPage({ message, filter = "" }) {
                 )}
             </Col>
             <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-               <div className="mb-3">< MostLikedRecipes /></div>
+               <div className="mb-3">< MostLikedRecipes/></div>
                <div>< MostFollowedProfiles /></div>
             </Col>            
         </Row>

@@ -12,7 +12,7 @@ export const useProfileData = () => useContext(ProfileDataContext);
 export const useSetProfileData = () => useContext(SetProfileDataContext);
 
 export const ProfileDataProvider = ({ children }) => {
-  const [profileData, setProfileData] = useState({    
+  const [profileData, setProfileData] = useState({
     pageProfile: { results: [] },
     mostFollowedProfiles: { results: [] },
   });

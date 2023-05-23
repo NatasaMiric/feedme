@@ -2,8 +2,8 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import btnStyles from "../../src/styles/Button.module.css"
 
-function ModalAlert({show, handleClose, deleteConfirm, title, message}) {
-  
+function ModalAlert({ show, handleClose, deleteConfirm, title, message }) {
+
   return (
     <Modal show={show} onClose={handleClose} onHide={handleClose}>
       <Modal.Header closeButton>

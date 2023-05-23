@@ -9,17 +9,16 @@ import { ProfileDataProvider } from "./contexts/ProfileDataContext";
 import { AlertProvider } from "./contexts/AlertContext";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <CurrentUserProvider>
-        <ProfileDataProvider>
-          <AlertProvider>
-            <App />
-          </AlertProvider>
-        </ProfileDataProvider>
-      </CurrentUserProvider>
-    </Router>
-  </React.StrictMode>,
+  <Router>
+    <CurrentUserProvider>
+      <ProfileDataProvider>
+        <AlertProvider>
+          <App />
+        </AlertProvider>
+      </ProfileDataProvider>
+    </CurrentUserProvider>
+  </Router>
+  ,
   document.getElementById('root')
 );
 
