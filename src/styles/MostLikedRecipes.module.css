@@ -13,4 +13,5 @@
     color: #3a5265;
     font-weight: bolder;     
     font-size: 17px; 
+    transition: all ease-in-out 0.3s;
 }

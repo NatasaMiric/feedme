@@ -43,10 +43,23 @@
   padding: 30px 10px;
 }
 
-.SignInCol {
-  height: 320px;
+.SignInCol {   
+  width: 50%; 
+  margin-top: 55px;
 }
 
-.SignUpCol {
-  height: 375px;
+.SignUpCol {  
+  width: 50%;
+  margin-top: 55px;
+}
+
+@media only screen and (max-width: 480px) {
+  .SignInCol {
+    width: 100%;
+    margin-top: 0px;
+  };
+  .SignUpCol {
+    width: 100%;
+    margin-top: 0px;
+  }
 }

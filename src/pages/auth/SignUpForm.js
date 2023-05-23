@@ -4,9 +4,6 @@ import { Link, useHistory } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 
 import styles from "../../styles/SignInUpForm.module.css";
@@ -47,21 +44,9 @@ const SignUpForm = () => {
     }
   }
 
-  return (
-    <Row>
-      <Col
-        lg={8} sm={6}
-        className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}
-      >
-        <Image
-          className={`${appStyles.FormsImage}`}
-          src={
-            "https://res.cloudinary.com/dyji6gqtn/image/upload/v1682862164/formimage_qibfmd.jpg"
-          }
-        />
-      </Col>
-      <Col className="my-auto py-2 p-md-2" lg={4} md={6}>
-        <Container className={`${appStyles.Content} p-3 `}>
+  return (   
+    <Container fluid className={`my-auto p-2 ${appStyles.BackgroundImage}`}>
+        <Container className={`${appStyles.Content} ${styles.SignUpCol} p-3 `}>
           <h1 className={styles.Header}>sign up</h1>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
@@ -121,13 +106,12 @@ const SignUpForm = () => {
             ))}
           </Form>
         </Container>
-        <Container className="mt-3">
+        <Container className={`${appStyles.Content} ${styles.SignInCol} mt-3`}>
           <Link className={styles.Link} to="/signin">
             Already have an account? <span>Sign in</span>
           </Link>
         </Container>
-      </Col>
-    </Row>
+      </Container>    
   );
 };
 
