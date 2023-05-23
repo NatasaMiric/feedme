@@ -29,22 +29,25 @@ const MostLikedRecipes = ({ mobile }) => {
     return (
         <Container
             className={`${styles.Content} ${mobile && "d-lg-none text-center mb-3"
-                }`} >
+                }`}
+        >
             {likedRecipe.results.length ? (
                 <>
                     <strong>Most liked recipes:</strong>
                     {mobile ? (
                         <div className="d-flex justify-content-around mt-3">
                             {likedRecipe.results.slice(0, 4).map((recipe) => (
-                                <Link to={`/recipes/${recipe.id}`} className={styles.Link}>
-                                    <Avatar src={recipe.recipe_image} height={50} />
-                                    <p key={recipe.id}>{recipe.title}</p>
-                                </Link>
+                                <div key={recipe.id}>
+                                    <Link to={`/recipes/${recipe.id}`} className={styles.Link}>
+                                        <Avatar src={recipe.recipe_image} height={50} />
+                                        <p key={recipe.id}>{recipe.title}</p>
+                                    </Link>
+                                </div>
                             ))}
                         </div>
                     ) : (
                         likedRecipe.results.slice(0, 5).map((recipe) => (
-                            <div className='mt-3'>
+                            <div className='mt-3' key={recipe.id}>
                                 <Link to={`/recipes/${recipe.id}`} className={styles.Link}>
                                     <span>
                                         <Avatar src={recipe.recipe_image} height={55} />
