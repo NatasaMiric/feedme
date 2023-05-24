@@ -191,7 +191,7 @@ const Recipe = (props) => {
                         </OverlayTrigger>
                     )}
                     {likes_count}
-                    <Link to={`/recipes/${id}`}>
+                    <Link to={`/recipes/${id}`} aria-label="comment icon">
                         <i className="far fa-comments" />
                     </Link>
                     {comments_count}

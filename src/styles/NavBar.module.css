@@ -1,11 +1,12 @@
 .NavBar {
     background-color: #e66e6c;
+    color: #2F2306;
 }
 
 .Brand {
-    color: #3a5265;
+    color: #2F2306;
     font-size: 110%;
-    padding: 10px;
+    padding: 10px;    
 }
 
 .Brand:hover {
@@ -19,8 +20,5 @@ i {
 }
 
 .Active i {
-    color: #eff3ef;    
+    color: #eff3ef;
 }
-
-
-

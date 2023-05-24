@@ -32,12 +32,14 @@ const NavBar = () => {
       <NavLink
         activeClassName={styles.Active}
         to="/signin"
+        aria-label="sign in"
       >
         <i className="fas fa-sign-in-alt"></i>Sign in
       </NavLink>
       <NavLink
         to="/signup"
         activeClassName={styles.Active}
+        aria-label="sign up"
       >
         <i className="fas fa-user-plus"></i>Sign up
       </NavLink>
@@ -49,30 +51,35 @@ const NavBar = () => {
       className={styles.NavLink}
       activeClassName={styles.Active}
       to="/feed"
+      aria-label="feed"
     >
       <i className="fas fa-stream"></i>Feed
     </NavLink>
     <NavLink
       activeClassName={styles.Active}
       to="/recipes/create"
+      aria-label="add recipe"
     >
       <i className="fas fa-plus-circle"></i>Add Recipe
     </NavLink>
     <NavLink
       to="/bookmarked"
       activeClassName={styles.Active}
+      aria-label="bookmarked"
     >
       <i className="fas fa-bookmark"></i>Bookmarked
     </NavLink>
     <NavLink
       to="/"
       onClick={handleSignOut}
+      aria-label="sign out"
     >
       <i className="fas fa-sign-out-alt"></i>Sign out
     </NavLink>
     <NavLink
       className={styles.NavLink}
       to={`/profiles/${currentUser?.profile_id}`}
+      aria-label="profile"
     >
       <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
     </NavLink>
@@ -84,7 +91,7 @@ const NavBar = () => {
       expand="md"
       fixed="top">
       <Container>
-        <NavLink to="/">
+        <NavLink to="/" aria-label="logo">
           <Navbar.Brand>
             <img src={logo} alt="logo" height="45" /><span
               className={styles.Brand}>FeedMe</span>
@@ -98,7 +105,8 @@ const NavBar = () => {
           <Nav className="ml-auto text-left" >
             <NavLink to="/"
               exact
-              activeClassName={styles.Active}>
+              activeClassName={styles.Active}
+              aria-label="home">
               <i className="fas fa-home"></i>Home
             </NavLink>
 

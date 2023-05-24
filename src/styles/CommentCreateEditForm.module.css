@@ -1,19 +1,19 @@
 .Form {
-    border: none;   
-  }
-  
-  .Button {
-    border: none;
-    background-color: #3a5265;
-    color: #eff3ef;
-    border-radius: 100px;
-    padding: 4px 10px;
-    min-width: 75px;
-    margin: 5px;
-  }
-  
-  .Button:hover {
-    cursor: pointer;
-    background-color: #e66e6c;
-    color: #eff3ef;
-  }
+  border: none;
+}
+
+.Button {
+  border: none;
+  background-color: #3a5265;
+  color: #eff3ef;
+  border-radius: 100px;
+  padding: 4px 10px;
+  min-width: 75px;
+  margin: 5px;
+}
+
+.Button:hover {
+  cursor: pointer;
+  background-color: #e66e6c;
+  color: #eff3ef;
+}
