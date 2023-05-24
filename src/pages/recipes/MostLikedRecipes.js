@@ -19,8 +19,7 @@ const MostLikedRecipes = ({ mobile }) => {
             try {
                 const { data } = await axiosReq.get("/recipes/?ordering=-likes_count");
                 setLikedRecipe(data);
-            } catch (err) {
-                //console.log(err);
+            } catch (err) {                
                 setAlert("Something went wrong, please try again!", "danger");
             }
         };

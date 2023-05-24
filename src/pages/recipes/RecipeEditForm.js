@@ -47,8 +47,7 @@ function RecipeEditForm() {
                     title, ingredients, instructions, category, difficulty,
                     cooking_time, recipe_image
                 }) : history.push("/");
-            } catch (err) {
-                //console.log(err);
+            } catch (err) {                
                 setAlert("Something went wrong, please try again!", "danger");
             }
         };
@@ -91,8 +90,7 @@ function RecipeEditForm() {
         try {
             await axiosReq.put(`/recipes/${id}/`, formData);
             history.push(`/recipes/${id}/`);
-        } catch (err) {
-            console.log(err);
+        } catch (err) {            
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
             }

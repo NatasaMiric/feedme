@@ -36,8 +36,7 @@ function CommentCreateForm(props) {
         ],
       }));
       setContent("");
-    } catch (err) {
-      //console.log(err);
+    } catch (err) {      
       setAlert("Something went wrong, please try again!", "danger");
     }
   };

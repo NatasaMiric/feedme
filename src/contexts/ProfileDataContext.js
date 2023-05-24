@@ -39,8 +39,7 @@ export const ProfileDataProvider = ({ children }) => {
           ),
         },
       }));
-    } catch (err) {
-      //console.log(err);
+    } catch (err) {      
     }
   };
 
@@ -62,8 +61,7 @@ export const ProfileDataProvider = ({ children }) => {
           ),
         },
       }));
-    } catch (err) {
-      //console.log(err);
+    } catch (err) {      
     }
   };
 
@@ -77,8 +75,7 @@ export const ProfileDataProvider = ({ children }) => {
           ...prevState,
           mostFollowedProfiles: data,
         }));
-      } catch (err) {
-        //console.log(err);
+      } catch (err) {        
       }
     };
 

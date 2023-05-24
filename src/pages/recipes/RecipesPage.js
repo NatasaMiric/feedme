@@ -33,8 +33,7 @@ function RecipesPage({ message, filter = "" }) {
                 setRecipes(data);
                 setHasLoaded(true);
                 console.log(filter);
-            } catch (err) {
-                //console.log(err);
+            } catch (err) {                
                 setAlert("Something went wrong, please try again!", "danger");
             }
         };

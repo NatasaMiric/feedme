@@ -66,8 +66,7 @@ const Recipe = (props) => {
             await axiosRes.delete(`/recipes/${id}/`);
             history.push('/');
             setAlert('Recipe has been deleted!', 'success')
-        } catch (err) {
-            //console.log(err);
+        } catch (err) {            
             setAlert("Something went wrong, please try again!", "danger");
         }
         setShow(false);
@@ -84,8 +83,7 @@ const Recipe = (props) => {
                         : recipe;
                 }),
             }));
-        } catch (err) {
-            //console.log(err);
+        } catch (err) {            
             setAlert("Something went wrong, please try again!", "danger");
         }
     };
@@ -101,8 +99,7 @@ const Recipe = (props) => {
                         : recipe;
                 }),
             }));
-        } catch (err) {
-            //console.log(err);
+        } catch (err) {            
             setAlert("Something went wrong, please try again!", "danger");
         }
     };
@@ -118,8 +115,7 @@ const Recipe = (props) => {
                         : recipe;
                 })
             }))
-        } catch (err) {
-            //console.log(err);
+        } catch (err) {            
             setAlert("Something went wrong, please try again!", "danger");
         }
 
@@ -136,8 +132,7 @@ const Recipe = (props) => {
                         : recipe;
                 }),
             }));
-        } catch (err) {
-            //console.log(err);
+        } catch (err) {            
             setAlert("Something went wrong, please try again!", "danger");
         }
     };
