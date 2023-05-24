@@ -14,10 +14,12 @@ import Asset from "../../components/Asset";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
+import useAlert from "../../hooks/useAlert";
 
 function RecipeCreateForm() {
     useRedirect("loggedOut")
     const [errors, setErrors] = useState({});
+    const { setAlert } = useAlert(); 
 
     const [recipeData, setRecipeData] = useState({
         title: "",
@@ -68,6 +70,7 @@ function RecipeCreateForm() {
         try {
             const { data } = await axiosReq.post("/recipes/", formData);
             history.push(`/recipes/${data.id}/`);
+            setAlert("Recipe successfully created", 'success')
         } catch (err) {            
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
