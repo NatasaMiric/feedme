@@ -251,6 +251,9 @@ I decided to have one Kanban board where will I implement issues for both API an
 
 * Add filter option to filter the recipes by category and difficulty.
 * Add rich text editor for ingredients and instructions field or create them as separate models in API so that it is possible to add each ingredient separately with measuring units, and instructions as steps.
+* Enable multiple selection in recipe category field.
+* Allow users to automatically create shoping lists based on the recipes they plan to make.
+* Allow users to make a weekly meal plan.   
 
 ## Technologies Used
 
