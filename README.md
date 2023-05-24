@@ -12,7 +12,7 @@ The repository for the Feedme API can be found here : [FeedMe API](https://githu
 
 ## Project Goals
 
-The goal of this application is to give users the possibility to create, update and delete their recipes, as well as access to other user's recipes and profile. By liking and commenting on recipes, users can interact with each other and share their opinion about the website content.  
+The goal of this application is to give users the possibility to create, update and delete their recipes, as well as access to other user's recipes and profile. By liking, commenting on recipes and following other users, users can interact with each other and share their opinion about the website content.  
 
 ## Table of Content
 
@@ -24,7 +24,7 @@ The goal of this application is to give users the possibility to create, update 
         * [Typography](#Typography)
         * [Imagery](#Imagery)
     * [Project planning](#Project-planning)
-* [Most reused components](#most-reused-components)
+* [Most reused components, context and hooks](#most-reused-components-hooks-and-contexts)
 * [Features](#Features)
   * [Existing features](#Existing-features)
   * [Future Features](#Future-features)
@@ -76,11 +76,11 @@ The goal of this application is to give users the possibility to create, update 
 | profiles| visiting user | view all the recipes by a specific user | catch up on their latest recipes | Recipe, ProfilePage |
 | profiles| visiting user | view other users profiles | see their posts and learn more about them | ProfilePage |
 | profiles| visiting user |  view statistics about a specific user: bio,number of posted recipes | know how active they are | ProfilePage, Recipe |
+| profile |  visiting user  | see the most followed profiles| know which profiles are popular | RecipesPage, MostFollowedRecipes |
 | search | visiting user | search for recipes by author or title | find the recipes I am most interested in | RecipesPage |
 | filter | visiting user | filter recipes by category and difficulty  | easier find the recipes that I am interested in | RecipesPage |
 | followers | logged in user | follow a profile | show my interest in someone's content | Profile follow button |
 | followers | logged in user | unfollow a profile | show that my interest in someone's content has faded away and remove their posts from my feed | Profile (un) follow button |
-| followers |  visiting user  | see the most followed profiles| know which profiles are popular | RecipesPage, MostFollowedRecipes |
 
 
 ### Wireframes
@@ -110,7 +110,7 @@ For the font I choose a [Google Font](https://fonts.google.com/) that is easy to
 Images were used to enrich the content and convey to visitors the content of the site. 
 All the images for the recipes posts have been borrowed from [unsplash](https://unsplash.com/).
 
-### Project planning
+## Project planning
 
 The project was developed using an Agile approach by defining the epics and user stories that were implemented in 6 sprints (milestones), each lasting of approximately one week.
 
@@ -139,7 +139,7 @@ I decided to have one Kanban board where will I implement issues for both API an
   * RecipesPage (loading all, feed or bookmarked Recipe components)
   * ProfilePage  (loading Recipe components that belong to the profile)
 
-### Context
+### Contexts
 
   * CurrentUserContext exposes the user state to the entire app. Relevant components can subscribe to its changes
   * ProfileDataContext exposes the profile state to the entire app. Enables the PopularProfiles component to be in sync with the ProfilePage contents
@@ -179,7 +179,7 @@ I decided to have one Kanban board where will I implement issues for both API an
   * Users are able to click on each recipe to access the recipe details (same in most liked recipes section).
   * Logged in users can like, comment and bookmark the recipe.
   * Users can access to another user profile by clicking on user's name or image on recipe or in most followed profiles list.
-  * In most followed profiles list, logged in users can click on follow button to follow a user, or unfollow button to unfollow a user (desktop screens). 
+  * Logged in users can click on follow button to follow a user in most followed profiles section, or unfollow button to unfollow a user (desktop screens). 
 
   ![](docs/features/desktopHome.png)
   ![](docs/features/mobileHome.png)
@@ -204,9 +204,9 @@ I decided to have one Kanban board where will I implement issues for both API an
 * Recipe Detail page
 
   * Displays the recipe details: author, image, title, ingredients, instructions, category, difficulty, cooking time.
-  * Enables logged in users to leave comment, edit or delete a comment.
+  * Logged in users can leave a comment, edit or delete a comment.
   * It provides the options menu where users can edit or delete their recipes.
-  * When user selects editing the recipe he gets redirected to recipe edit page where he can change all fields. 
+  * When user selects editing the recipe, he gets redirected to recipe edit page where he can change all fields. 
 
 ![](docs/features/desktoprecipeDetail.png)
 ![](docs/features/mobileRecipeDetail.png)
@@ -220,7 +220,7 @@ I decided to have one Kanban board where will I implement issues for both API an
 
   * Logged in users can create a recipe by uploading an image and filling out the form fields:
   title, ingredients, instructions, category, difficulty and cooking time. 
-  * After creating the recipe users are going to be redirected to home page and receive a message for successfuly created recipe. 
+  * After creating the recipe, users are redirected to home page and a message for successfuly created recipe is displayed. 
 
 ![](docs/features/desktopAddRecipe.png)
 ![](docs/features/mobileAddRecipe.png)
@@ -236,7 +236,7 @@ I decided to have one Kanban board where will I implement issues for both API an
 
 * Profile 
 
-  * It provides the information about the user: username, bio, number of posted recipes, followers and following. In this section there is also a button to follow/unfollow a user. 
+  * It provides the information about the user: username, bio, number of posted recipes, followers and following. In this section is also a button to follow/unfollow a user. 
   * Contains all the recipes that user has posted.
   * Profile owner can edit his username, profile image, bio and password.
 
@@ -278,6 +278,8 @@ I decided to have one Kanban board where will I implement issues for both API an
 * GitHub - project repository
 
 ## Testing
+
+All testing details can be found [here](TESTING.md)
 
 ## Deployment
 
