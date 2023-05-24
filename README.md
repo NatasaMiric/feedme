@@ -71,10 +71,10 @@ The goal of this application is to give users the possibility to create, update 
 | bookmarks | logged in user | bookmark the recipes | store the recipes that I like the most  | Recipe, bookmark icon |
 | bookmarks | logged in user | view all bookmarked recipes | find easier the recipes that I planned to make | Bookmarks Page |
 | bookmarks | logged in user| view the details of bookmarked recipe | know how to prepare it  | RecipeDetailPage, Bookmarks Page |
-| profiles| logged in user | update my username and password | change my display name and keep my profile secure| ProfilePage |
-| profiles| logged in user |  edit my profile  |  change my profile picture and bio | ProfilePage |
-| profiles| visiting user | view all the recipes by a specific user | catch up on their latest recipes | Recipe, ProfilePage |
-| profiles| visiting user | view other users profiles | see their posts and learn more about them | ProfilePage |
+| profiles | logged in user | update my username and password | change my display name and keep my profile secure| ProfilePage |
+| profiles | logged in user |  edit my profile  |  change my profile picture and bio | ProfilePage |
+| profiles | visiting user | view all the recipes by a specific user | catch up on their latest recipes | Recipe, ProfilePage |
+| profiles | visiting user | view other users profiles | see their posts and learn more about them | ProfilePage |
 | profiles| visiting user |  view statistics about a specific user: bio,number of posted recipes | know how active they are | ProfilePage, Recipe |
 | profile |  visiting user  | see the most followed profiles| know which profiles are popular | RecipesPage, MostFollowedRecipes |
 | search | visiting user | search for recipes by author or title | find the recipes I am most interested in | RecipesPage |
