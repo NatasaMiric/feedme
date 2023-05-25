@@ -15,15 +15,13 @@ The CSS code has been checked on [W3C CSS Jigsaw validator](https://jigsaw.w3.or
 
 ### Lighthouse
 
-I have used Googles Lighthouse testing to test the performance, accessibility, best practices and SEO of the site.
+I have used Google's Lighthouse testing to test the performance, accessibility, best practices and SEO of the site.
 Each page has been tested and the accessibility improvements have been made.
 The performance score is impacted mostly because of images loading that are located on page and should be improved. 
 
 * [Desktop results](docs/lighthouse/desktop/)
 
 * [Mobile results](docs/lighthouse/mobile/)
-
-
 
 
 ## Manual testing
@@ -44,12 +42,12 @@ The performance score is impacted mostly because of images loading that are loca
 |  visiting user  | see the most liked recipes| know which recipes are popular | When the user clicks on home, feed and bookmarked page, the user should be able to see most liked recipes section on right side of the page |  ![](docs/features/desktopHome.png)      |
 | logged in user | view followed users' posts  | keep up with my favourite users |  When the user clicks on feed located on navbar, the user will be redirected to feed page where will be displayed the recipes by users that he follows | ![](docs/features/desktopFeed.png)     |
 | logged in user | like a recipe | show my support to the author of the recipe | When the user click on the heart icon located on recipe section, the heart will become red which means that the liking has succeded | ![](docs/features/recipeicons.png)  |
-| logged in user | unlike a post | express that my interest has faded away | When the user clicks on the red heart located on recipe, the icon is going to switch to white color which show that unliking succeded |     |
-| logged in user | add comments to a recipe | share my thoughts about the recipe | When the user clicks on recipe and gets redirected to another page, below the recipe will be displayed a comment form where user should write a text and click on post button |  ![](docs/features/desktopRecipe.png) |
+| logged in user | unlike a recipe | express that my interest has faded away | When the user clicks on the red heart located on recipe, the icon is going to switch to white color which show that unliking succeded | ![](docs/features/desktopRecipe.png)    |
+| logged in user | add comments to a recipe | share my thoughts about the recipe | When the user clicks on recipe and gets redirected to another page, below the recipe will be displayed a comment form where user should write a text and click on post button | ![](docs/features/comment.png)   |
 | visiting user | see how long ago a comment was made | know how old a comment is | User should be able to find the time of each comment next to the name of the user taht posted the comment | ![](docs/features/comment.png)      |
 | visiting user | read comments on recipe  | read what other users think about the recipe | When user clicks on comment icon on recipe, he will be redirected to another page where will be all comments listed below the recipe |  ![](docs/features/comments.png)     |
 | owner of a comment  | delete my comment | control removal of my comment from the application | When the user clicks on three dots located in comment form and clicks on delete icon, then will pop up the delete confirmation where user should click delete button  | ![](docs/features/comment.png) ![](docs/features/deletecomment.png)    |
-| owner of a comment | edit my comment  | fix or update my existing comment | When the user clicks on three dots located in comment form and clicks on edit icon, the user is able to change the comment and click on save |  ![](docs/features/comment.png) !  ![](docs/features/editcomment.png)   |
+| owner of a comment | edit my comment  | fix or update my existing comment | When the user clicks on three dots located in comment form and clicks on edit icon, the user is able to change the comment and click on save | ![](docs/features/editcomment.png)   |
 | logged in user | bookmark the recipes | store the recipes that I like the most  | When the user clicks on bookmark icon that is located on recipe, the icon becomes green | ![](docs/features/recipeicons.png)  |
 | logged in user | view all bookmarked recipes | find easier the recipes that I planned to make | When the user clicks on bookmarked button located on navbar he will be redirected to bookmarked page where will be displayed all recipes that the user bookmarked | ![](docs/features/desktopBookmarked.png) |
 | logged in user| view the details of bookmarked recipe | know how to prepare it  | When the user clicks on recipe, he will be redirected to another page where the all information about the recipe will be displayed | ![](docs/features/bookmarkedrecipedetails.png)   |
@@ -58,7 +56,7 @@ The performance score is impacted mostly because of images loading that are loca
 | visiting user | view all the recipes by a specific user | catch up on their latest recipes | When the user goes to another user's profile by clicking on the users profile image or name, he will be redirected to user's profile where the user can scroll through all the recipes that user has posted (newest recipes first) | ![](docs/features/userProfile.png)       |
 | visiting user |  view statistics about a specific user: bio,number of posted recipes | know how active they are | When the user goes to another user's profile by clicking on the users profile image or name, he will be redirected to user's profile where the user can find on top of the page these profile details  | ![](docs/features/userProfile.png)  |
 |  visiting user  | see the most followed profiles| know which profiles are popular | When the user clicks on home, feed and bookmarked page, the user should be able to see most followed profiles section on right side of the page  | ![](docs/features/desktopBookmarked.png) ![](docs/features/desktopFeed.png) ![](docs/features/desktopHome.png)   |
-| visiting user | search for recipes by author or title | find the recipes I am most interested in | When the user goes to home, feed or bookmarked page, the user should locate the search bar on top of the pages where should he input author, title or ingredient of the recipe and the matching recipe will be displayed below | ![](docs/features/desktopHome.png)   |
+| visiting user | search for recipes by author or title | find the recipes I am most interested in | When the user goes to home, feed or bookmarked page, the user should locate the search bar on top of the pages where should he input author, title or ingredient of the recipe and the matching recipe will be displayed below | ![](docs/features/searchrecipe.png)   |
 | logged in user | follow a profile | show my interest in someone's content | The user should click on follow button located on user's profile page or in most followed profile section, and after that the button will transform to unfollow | ![](docs/features/followuser.png)  |
 | logged in user | unfollow a profile | show that my interest in someone's content has faded away and remove their posts from my feed | The user should click on unfollow button located on user's profile page or in most followed profile section, and after that the button will transform to follow | ![](docs/features/userProfile.png) |
 
@@ -162,5 +160,7 @@ Testing was also performed using the following browsers:
 | Sign up now button | When I click on this button I will be redirected to sign up page | Clicked on button | Taken to correct page | Pass |
 | Sign up Button | When I click on this button I will be redirected to home page | Clicked on button | Taken to correct page | Pass |
 
+## Bugs
 
+All bugs discovered during the development were solved and documented in [GitHub Project](https://github.com/users/NatasaMiric/projects/4/views/1)
 

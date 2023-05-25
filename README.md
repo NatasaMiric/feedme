@@ -62,7 +62,7 @@ The goal of this application is to give users the possibility to create, update 
 | recipes |  visiting user  | see the most liked recipes| know which recipes are popular | RecipesPage, MostLikedRecipes |
 | recipes | logged in user | view followed users' posts  | keep up with my favourite users | RecipesPage |
 | likes | logged in user | like a recipe | show my support to the author of the recipe | Recipe, Like icon |
-| likes | logged in user | unlike a post | express that my interest has faded away | Recipe, (un) like icon |
+| likes | logged in user | unlike a recipe | express that my interest has faded away | Recipe, (un) like icon |
 | comments | logged in user | add comments to a recipe | share my thoughts about the recipe | RecipeDetailPage, CommentCreateForm |
 | comments | visiting user | see how long ago a comment was made | know how old a comment is | Comment |
 | comments | visiting user | read comments on recipe  | read what other users think about the recipe | RecipeDetailPage |
@@ -292,13 +292,14 @@ All testing details can be found [here](TESTING.md)
 
 * Workspace setup
 
-Set up a new repository on Github
+    1. Set up a new repository on Github
     2. Open the workspace on Gitpod using the green Gitpod button
     3. In ther terminal enter the following command:
-     npx create-react-app . --template git+https://github.com/Code-Institute-Org/cra-template-moments.git --use-npm
+      npx create-react-app . --template git+https://github.com/Code-Institute-Org/cra-template-moments.git --use-npm
     4. Enter y to confirm installing the create-react-app package
     5. Start the app with:
     npm start
+
 
 * Deployment
 
@@ -314,8 +315,6 @@ Set up a new repository on Github
 ## Credits
 
 This project was inspired by [Code Institute Moments project](https://github.com/Code-Institute-Solutions/moments) 
-
-Code Institute template for setting up the project: [](https://github.com/Code-Institute-Org/cra-template-moments)
 
 The initial template for the project was made by [Code Institute](https://github.com/Code-Institute-Org/cra-template-moments)
 
