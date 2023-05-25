@@ -87,6 +87,7 @@ function RecipeCreateForm() {
                     name="title"
                     value={title}
                     onChange={handleChange}
+                    aria-labelledby={title}
                 />
             </Form.Group>
             {errors?.title?.map((message, idx) => (
@@ -102,6 +103,7 @@ function RecipeCreateForm() {
                     name="ingredients"
                     value={ingredients}
                     onChange={handleChange}
+                    aria-labelledby={ingredients}
                 />
             </Form.Group>
             {errors?.ingredients?.map((message, idx) => (
@@ -117,6 +119,7 @@ function RecipeCreateForm() {
                     name="instructions"
                     value={instructions}
                     onChange={handleChange}
+                    aria-labelledby={instructions}
                 />
             </Form.Group>
             {errors?.instructions?.map((message, idx) => (
@@ -130,7 +133,8 @@ function RecipeCreateForm() {
                     as="select"
                     name="category"                    
                     value={category}
-                    onChange={handleChange}>
+                    onChange={handleChange}
+                    aria-labelledby={category}>
                     <option value="appetizer">Appetizer</option>
                     <option value="main course">Main course</option>
                     <option value="dessert">Dessert</option>
@@ -156,7 +160,8 @@ function RecipeCreateForm() {
                     as="select"
                     name="difficulty"
                     onChange={handleChange}
-                    value={difficulty}>
+                    value={difficulty}
+                    aria-labelledby={difficulty}>
                     <option value="easy">Easy</option>
                     <option value="moderate">Moderate</option>
                     <option value="hard">Hard</option>
@@ -174,6 +179,7 @@ function RecipeCreateForm() {
                     name="cooking_time"
                     value={cooking_time}
                     onChange={handleChange}
+                    aria-labelledby={cooking_time}
                 />
             </Form.Group>
             {errors?.cooking_time?.map((message, idx) => (
@@ -204,7 +210,7 @@ function RecipeCreateForm() {
                             {recipe_image ? (
                                 <>
                                     <figure>
-                                        <Image className={appStyles.Image} src={recipe_image} rounded />
+                                        <Image className={appStyles.Image} src={recipe_image} rounded alt="recipe image"/>
                                     </figure>
                                     <div>
                                         <Form.Label

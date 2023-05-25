@@ -222,7 +222,7 @@ function RecipeEditForm() {
                         <Form.Group className="text-center">
 
                             <figure>
-                                <Image className={appStyles.Image} src={recipe_image} rounded />
+                                <Image className={appStyles.Image} src={recipe_image} rounded alt="recipe image"/>
                             </figure>
                             <div>
                                 <Form.Label

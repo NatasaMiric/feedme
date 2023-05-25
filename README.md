@@ -17,27 +17,27 @@ The goal of this application is to give users the possibility to create, update 
 ## Table of Content
 
 * [UX](#UX) 
-    * [User Stories](#User-Stories)          
-    * [Wireframes](#Wireframes)
-    * [Design](#Design)
-        * [Color scheme](#Color-scheme)
-        * [Typography](#Typography)
-        * [Imagery](#Imagery)
-    * [Project planning](#Project-planning)
+    * [User Stories](#user-stories)          
+    * [Wireframes](#wireframes)
+    * [Design](#design)
+        * [Color scheme](#color-scheme)
+        * [Typography](#typography)
+        * [Imagery](#imagery)
+    * [Project planning](#project-planning)
 * [Most reused components, context and hooks](#most-reused-components-hooks-and-contexts)
-* [Features](#Features)
-  * [Existing features](#Existing-features)
-  * [Future Features](#Future-features)
+* [Features](#features)
+  * [Existing features](#existing-features)
+  * [Future Features](#future-features)
   
-* [Technologies Used](#Technologies-Used)
-  * [Languages Used](#Languages)
-  * [Frameworks, Libraries & Programs](#Frameworks-Libraries-Programs) 
+* [Technologies Used](#technologies-used)
+  * [Languages Used](#languages)
+  * [Frameworks, Libraries & Programs](#frameworks-libraries-&-programs) 
 
-* [Testing](#Testing)
+* [Testing](#testing)
 
-* [Deployment](#Deployment)
+* [Deployment](#deployment)
 
-* [Credits](#Credits)   
+* [Credits](#credits)   
 
 ----------------------------
 
@@ -94,7 +94,7 @@ Wireframes were made for desktop and mobile view.
 ### Design
 #### Color scheme
 
-The website color scheme is vibrant to achieve soothing appearance and make it fun. The goal is to boost in visitors positive and fun emotions.   
+Vibrant navbar color (#E66E6C) and light background color (#F6EFE5) to achieve soothing appearance and make it fun. The goal is to boost in visitors positive and fun emotions.   
 
 ![](docs/images/colorscheme.png)
 
@@ -171,6 +171,7 @@ I decided to have one Kanban board where will I implement issues for both API an
   ![](docs/features/desktopNavbar.png)
   ![](docs/features/mobileNavbar.png)
   ![](docs/features/mobileNavbar1.png)
+  ![](docs/features/navbar.png)
 
 * Home Page 
 
@@ -208,12 +209,13 @@ I decided to have one Kanban board where will I implement issues for both API an
   * It provides the options menu where users can edit or delete their recipes.
   * When user selects editing the recipe, he gets redirected to recipe edit page where he can change all fields. 
 
-![](docs/features/desktoprecipeDetail.png)
+![](docs/features/desktopRecipe.png)
 ![](docs/features/mobileRecipeDetail.png)
 ![](docs/features/optionsmenu.png)
 ![](docs/features/comment.png)
 ![](docs/features/desktopEditrecipe.png)
 ![](docs/features/mobileEditRecipe.png)
+![](docs/features/deleteconfirmation.png)
 
 
 * Add Recipe page
@@ -230,9 +232,13 @@ I decided to have one Kanban board where will I implement issues for both API an
 
   * It provides the same design as home page (logged in status), except that the diplayed recipes belong to users that logged in user has followed. 
 
+  ![](docs/features/desktopFeed.png)
+
 * Bookmarked Page
 
   * It provides the same design as home page (logged in status), except that the displayed recipes are the ones that logged in user has bookmarked. 
+
+  ![](docs/features/desktopBookmarked.png)
 
 * Profile 
 
@@ -246,6 +252,7 @@ I decided to have one Kanban board where will I implement issues for both API an
   ![](docs/features/editusername.png)
   ![](docs/features/editpassword.png) 
   ![](docs/features/userProfile.png)
+  ![](docs/features/editProfilemenu.png)
   
 ### Future Features
 
