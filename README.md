@@ -6,7 +6,7 @@ Welcome to the React front end project section.
 
 ### Deployed app 
 
-[Visit FeedMe](https://feedme-react.herokuapp.com/)
+[Visit FeedMe](https://feedme-9ivs.onrender.com)
 
 The repository for the Feedme API can be found here : [FeedMe API](https://github.com/NatasaMiric/feedme-api)
 
@@ -280,7 +280,7 @@ I decided to have one Kanban board where will I implement issues for both API an
 * JWT decode 3.1.2 - used for decoding JWT tokens.
 * [Eslinter](https://eslint.org/play/) - online linter tool for identifying and reporting on patterns in JavaScript
 * Cloudinary - for free image hosting
-* Heroku - used for hosting the application
+* Heroku - used for hosting the application, UPDATE 02.11.2024 - migrated to Render
 * Git - used for version control
 * GitHub - project repository
 
@@ -289,6 +289,7 @@ I decided to have one Kanban board where will I implement issues for both API an
 All testing details can be found [here](TESTING.md)
 
 ## Deployment
+!!!UPDATE 02.11.2024 -The app is migrated to Render
 
 * Workspace setup
 
